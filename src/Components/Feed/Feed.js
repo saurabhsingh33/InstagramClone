@@ -5,6 +5,7 @@ import Stories from '../Stories/Stories';
 
 const data = [
     {
+        id: '1',
         user: {
             imageUri: 'https://i.pinimg.com/474x/64/76/eb/6476eb89e87258727f13ff41f348939e.jpg',
             name: 'user'
@@ -15,6 +16,7 @@ const data = [
         postedAt: '6 minutes ago'
     },
     {
+        id: '2',
         user: {
             imageUri: 'https://www.discoverwalks.com/blog/wp-content/uploads/2020/10/512px-gandhi_smiling_r.jpg',
             name: 'user'
@@ -25,6 +27,7 @@ const data = [
         postedAt: '1 hour ago'
     },
     {
+        id: '3',
         user: {
             imageUri: 'http://www.vanitynoapologies.com/wp-content/uploads/2015/09/most-beautiful-women-in-india-7.jpg',
             name: 'user'
@@ -35,6 +38,7 @@ const data = [
         postedAt: '6 minutes ago'
     },
     {
+        id: '4',
         user: {
             imageUri: 'https://i.pinimg.com/originals/72/96/32/729632c5cb4f7540db272d5873f0bf0e.jpg',
             name: 'user'
@@ -47,9 +51,10 @@ const data = [
 ]
 
 const Feed = () => {
-    return <FlatList 
+    return <FlatList
         data={data}
-        renderItem={({item}) => <Post post={item}/>}
+        renderItem={({ item }) => <Post post={item} />}
+        keyExtractor={({ id }) => id}
         ListHeaderComponent={Stories}
     />
 }
