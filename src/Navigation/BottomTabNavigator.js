@@ -5,6 +5,7 @@ import Search from "../Screens/Search/Search";
 import Foundation from 'react-native-vector-icons/Foundation';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import HomeTitleBar from "../Screens/HomeScreen/TitleBar";
 
 const Tab = createBottomTabNavigator();
 
@@ -29,11 +30,11 @@ function BottomTabNavigator() {
             tabBarShowLabel: false,
 
         })}>
-            <Tab.Screen name="Home" component={HomeScreen} />
-            <Tab.Screen name="Search" component={Search} />
-            <Tab.Screen name="Reels" component={HomeScreen} />
-            <Tab.Screen name="Activity" component={HomeScreen} />
-            <Tab.Screen name="Profile" component={HomeScreen} />
+            <Tab.Screen name="Home" component={HomeTitleBar} options={{ headerShown: false }} />
+            <Tab.Screen name="Search" component={Search} options={{ headerShown: false }} />
+            <Tab.Screen name="Reels" component={HomeScreen} options={{ headerShown: false }} />
+            <Tab.Screen name="Activity" component={HomeScreen} options={{ headerShown: false }} />
+            <Tab.Screen name="Profile" component={HomeScreen} options={{ headerShown: false }} />
         </Tab.Navigator>
     )
 }
